@@ -156,3 +156,13 @@
     }
 
 }
+
+
+@media (max-width:500px) {
+
+    .resumeMain{
+        width: 90%;
+    }
+
+
+}
