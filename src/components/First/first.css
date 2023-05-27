@@ -16,9 +16,40 @@ hr{
    border-color: black;
 }
 
+.dark{
+    text-align: end;
+    margin: 0 2vh;
+    padding: 0.5vh;
+}
+
+.dark > button{
+    border-radius: 15vh;
+    padding: .5vh 1.5vh;
+    font-weight: bold;
+}
+
 .first{
 
     width: 80%;
-    margin: 5vh auto;
+    margin: 0 auto;
+
+    padding: 2vh ;
     border: 2px solid;
+}
+
+
+@media (max-width:500px) {
+
+    h1{
+        font-size: 1.5em;
+    }
+
+    p{
+        width: 95%;
+    }
+
+    .first{
+        width: 95%;
+        margin: 0 auto;
+    }
 }
