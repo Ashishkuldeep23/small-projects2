@@ -4,6 +4,8 @@ import { useState } from 'react'
 import First from './components/First/First'
 import Menu from './components/Menu/Menu'
 
+import ResumeMain from './components/Resume/ResumeMain'
+
 import "./app.css"
 
 
@@ -17,6 +19,11 @@ function App() {
         <First setcolor={setTheme} color={theme}/>
         <Menu color={theme} />
       </div>
+
+
+      {/* Resume UI code here ---------------> */}
+
+      <ResumeMain />
 
     </>
   )

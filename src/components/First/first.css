@@ -1,18 +1,17 @@
-h1{
+.first > h1{
     color: red;
     text-align: center;
 }
 
-p{
-
+.first > p{
     width: 80%;
     text-align: center;
     margin: 0 auto;
 }
 
 
-hr{
-    margin: 0 !important;
+.first > hr{
+    /* margin: 0 !important; */
    border-color: black;
 }
 

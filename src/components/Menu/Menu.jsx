@@ -8,7 +8,7 @@ const Menu = ({color}) =>{
 
     return(
 
-        <nav className="nav" style={ { backgroundColor : (color ? "violet" : "blue") }}>
+        <nav className="nav" style={ { backgroundColor : (color ? "cyan" : "blue") }}>
 
             {/* I'm nav here */}
 
