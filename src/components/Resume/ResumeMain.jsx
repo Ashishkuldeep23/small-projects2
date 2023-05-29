@@ -17,7 +17,9 @@ const ResumeMain = () => {
 
       <div className='resumeMain' style={ {backgroundColor : (darkMode ? "black" : "white") , color:(darkMode ? "white" : "black")} }>
 
-        <div className="left"  style={{backgroundColor : (darkMode ? "darkred" :"darkslategrey") }}>
+        <div className="left"  style={{backgroundColor : (darkMode ? "#0f2c2c" :"darkslategrey") }}>
+
+          
 
           <div className="profilePic"></div>
           <h2 style={{textAlign:"center"}}>Ashish Kuldeep</h2>
