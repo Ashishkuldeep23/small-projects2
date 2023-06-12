@@ -15,7 +15,7 @@ const ResumeMain = () => {
       <button className='dark' style={{backgroundColor : (darkMode?"lightcyan":"black") , color : (darkMode ? "black" : "white")}} onClick={ ()=>{setDarkMode(!darkMode)} }>{darkMode ? "Ligth" : "Dark"}</button>
 
 
-      <div className='resumeMain' style={ {backgroundColor : (darkMode ? "black" : "white") , color:(darkMode ? "white" : "black")} }>
+      <div className='resumeMain' style={ {backgroundColor : (darkMode ? "black" : "white") , backgroundImage : 'url("https://www.transparenttextures.com/patterns/food.png")' , color:(darkMode ? "white" : "black")} }>
 
         <div className="left"  style={{backgroundColor : (darkMode ? "#0f2c2c" :"darkslategrey") }}>
 
