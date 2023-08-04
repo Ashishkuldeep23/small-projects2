@@ -128,15 +128,17 @@ function Prectie2() {
 
     // console.log(backDataArr)
 
-    setOpratorSing(backDataArr[backDataArr.length - 1].sing)
-    setResult(backDataArr[backDataArr.length - 1].result)
-    setValuesOfNum({ first: backDataArr[backDataArr.length - 1].first, second: backDataArr[backDataArr.length - 1].second })
-
     backDataArr.pop()    // // // Means pop() and push() also worked with state var array.
+
+    // // // pop() ele from backDataArr and paste all values below ------>
+
+
+    setOpratorSing(backDataArr[backDataArr.length - 1].sing);
+    setResult(backDataArr[backDataArr.length - 1].result);
+    setValuesOfNum({ first: backDataArr[backDataArr.length - 1].first, second: backDataArr[backDataArr.length - 1].second });
+
+    // backDataArr.pop()    // // // Means pop() and push() also worked with state var array.
     setBackDataArr(backDataArr)
-
-
-
 
   }
 
@@ -258,7 +260,6 @@ function Prectie2() {
 
             <button
               className={(backDataArr.length > 1) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
-
               onClick={backHandlerFn}
             >Back</button>
 
