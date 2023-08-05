@@ -10,6 +10,8 @@ import Upload from './components/Upload/Upload';
 import Prectice1 from './components/Prectice1/Prectice1';
 import Prectice2 from './components/Pectice2/Prectice2';
 
+import Calculator from './components/Calculator/Calculator';
+
 import "./app.css"
 
 
@@ -23,6 +25,12 @@ function App() {
         <First setcolor={setTheme} color={theme}/>
         <Menu color={theme} />
       </div>
+
+
+      {/* Calculator ui ------------> */}
+
+      {/* <Calculator /> */}
+
 
       
       {/* Prectice React and css and also js */}

@@ -1,6 +1,6 @@
 .main_prec_2 {
     height: 100vh;
-    width: 98vw;
+    width: 98.5vw;
     border: .15rem solid black;
     border-radius: 10vh;
 
@@ -8,6 +8,42 @@
     align-items: center;
     justify-content: center;
 
+    color: lightseagreen;
+
+}
 
 
+h1{
+    font-family: revert;
+    font-weight: bolder;
+    -webkit-text-stroke: 1px lightseagreen;
+    color: transparent;
+   
+}
+
+h1:hover{
+    color: lightseagreen;
+    transition:all ease 2s;
+}
+
+
+button{
+    transition: all ease 550ms;
+}
+
+
+button:hover{
+    background-color: black !important;
+    color: #fff !important;
+    outline: 1px black solid;
+    outline-offset: 2px;
+}
+
+
+
+
+/* By Below i can remove arrow key of up and dowm from my number input */
+
+input::-webkit-outer-spin-button , input::-webkit-inner-spin-button{
+    display: none;
 }

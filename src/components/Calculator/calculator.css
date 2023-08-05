@@ -1,0 +1,49 @@
+.calculator_main{
+
+    height: 100vh;
+    border-radius: 10vh;
+    width: 99vw;
+}
+
+
+.cal_box{
+    width: 70vh;
+}
+
+
+
+.btn_row{
+    height: 7vh;
+}
+
+
+.btn_row > div{
+    border-radius: 1.5vh;
+    /* border: 2px solid transparent; */
+    outline: 2px solid white;
+
+    display: grid;
+    place-items: center;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    color: white;
+
+    background-color: lightseagreen;
+    transition: all ease 200ms;
+}
+
+
+.btn_row > div:is(:hover){
+    cursor: pointer;
+    background: #fff;
+    color: lightseagreen;
+    border: 1px solid lightseagreen;
+
+}
+
+
+
+.btn_row > div:active{
+    background: black;
+
+}

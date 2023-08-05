@@ -229,6 +229,7 @@ function Prectie2() {
 
 
             <input
+              p
               placeholder='Give First Number'
               className='rounded my-1'
               type="number" value={valuesOfNum.first}
@@ -245,7 +246,7 @@ function Prectie2() {
 
 
             <input
-
+          
               placeholder='Give Second Number'
               className='rounded my-1'
               type="number" value={valuesOfNum.second}
@@ -289,9 +290,13 @@ function Prectie2() {
               }}
             > Reset</button>
 
-            <button
-              className='ms-1 px-3 rounded my-2 mx-3 bg-success text-white fw-bolder'
-            >Result is : {result}</button>
+            <p
+              className='  border border-2 border-dark ms-1 px-3 rounded my-2 mx-3 bg-success text-white fw-bolder'
+            >
+              { 
+                `${valuesOfNum.first || "0"} ${opratorSing || "+"} ${valuesOfNum.second || "0"} = ${result || "0"}`
+              }
+            </p>
           </div>
 
         </div>
