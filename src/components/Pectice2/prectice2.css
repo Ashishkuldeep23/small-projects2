@@ -40,6 +40,11 @@ button:hover{
 }
 
 
+input::first-line{
+    transition: all  2s;
+}
+
+
 
 
 /* By Below i can remove arrow key of up and dowm from my number input */

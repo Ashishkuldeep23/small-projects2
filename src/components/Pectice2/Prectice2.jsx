@@ -24,7 +24,8 @@ if (getPreivousData) {
 function Prectie2() {
 
 
-  const [backDataArr, setBackDataArr] = useState([{ first: "", second: "", sing: "+", result: 0 }])
+  // // // This use state will contain all histories --------->
+  const [backDataArr, setBackDataArr] = useState([])
 
 
   const [opratorSing, setOpratorSing] = useState(getPreivousData[getPreivousData?.length - 1].sing)
@@ -44,25 +45,70 @@ function Prectie2() {
 
 
 
-
   function handeChangeOpr(opr) {
 
-    if (opr === "+") {
-      setOpratorSing("+")
+    // if (opr === "+") {
+    //   setOpratorSing("+")
+    // }
+    // else if (opr === "-") {
+    //   setOpratorSing("-")
+    // }
+    // else if (opr === "*") {
+    //   setOpratorSing("*")
+    // }
+    // else if (opr === "/") {
+    //   setOpratorSing("/")
+    // }
+    // else if (opr === "**") {
+    //   setOpratorSing("**")
+    // }
+
+
+    // else {
+    //   setOpratorSing("+")
+    // }
+
+
+    switch (opr) {
+
+      case "+":
+        setOpratorSing("+")
+        break;
+
+      case "-":
+        setOpratorSing("-")
+        break;
+      case "*":
+        setOpratorSing("*")
+        break;
+      case "/":
+        setOpratorSing("/")
+        break;
+      case "pw":
+        setOpratorSing("pw")
+        break;
+
+      case "%":
+        setOpratorSing("%")
+        break;
+
+      case "mod":
+        setOpratorSing("mod")
+        break;
+
+
+      default:
+        setOpratorSing("+")
+        break;
+
     }
-    else if (opr === "-") {
-      setOpratorSing("-")
-    }
-    else if (opr === "*") {
-      setOpratorSing("*")
-    }
-    else if (opr === "/") {
-      setOpratorSing("/")
-    }
-    else {
-      setOpratorSing("+")
-    }
+
+
+
+
   }
+
+
 
 
   function claculateHandler() {
@@ -87,18 +133,43 @@ function Prectie2() {
 
     let cal;
 
-    if (takeSign === "+") {
-      cal = firstVal + secVal
+
+    switch (opratorSing) {
+
+      case "+":
+        cal = firstVal + secVal
+        break;
+
+      case "-":
+        cal = firstVal - secVal
+        break;
+
+      case "*":
+        cal = firstVal * secVal
+        break;
+
+      case "/":
+        cal = firstVal / secVal
+        break;
+
+
+      case "pw":
+        cal = firstVal ** secVal
+        break;
+
+      case "%":
+        cal = (firstVal / 100) * secVal
+        break;
+
+      case "mod":
+        cal = firstVal % secVal
+        break;
+
+      default:
+        break;
     }
-    else if (takeSign === "-") {
-      cal = firstVal - secVal
-    }
-    else if (takeSign === "*") {
-      cal = firstVal * secVal
-    }
-    else if (takeSign === "/") {
-      cal = firstVal / secVal
-    }
+
+
 
 
     setResult(cal)  // // // Set result here
@@ -133,9 +204,9 @@ function Prectie2() {
     // // // pop() ele from backDataArr and paste all values below ------>
 
 
-    setOpratorSing(backDataArr[backDataArr.length - 1].sing);
-    setResult(backDataArr[backDataArr.length - 1].result);
-    setValuesOfNum({ first: backDataArr[backDataArr.length - 1].first, second: backDataArr[backDataArr.length - 1].second });
+    setOpratorSing(backDataArr[backDataArr.length - 1]?.sing || "+");
+    setResult(backDataArr[backDataArr.length - 1]?.result || "0");
+    setValuesOfNum({ first: backDataArr[backDataArr.length - 1]?.first || "0", second: backDataArr[backDataArr.length - 1]?.second || "0"});
 
     // backDataArr.pop()    // // // Means pop() and push() also worked with state var array.
     setBackDataArr(backDataArr)
@@ -145,6 +216,8 @@ function Prectie2() {
 
   useEffect(() => {
 
+    console.log(backDataArr)
+
 
     // // // (Total Operations) Save value in localStorage how many operations till now -------->
     if (totalOpr) {
@@ -152,35 +225,23 @@ function Prectie2() {
     }
 
 
-    // // // Make history for back btn (set localStrorage) -------------->
-
-    // if(backDataArr[backDataArr.length-1].first !== '' || backDataArr[backDataArr.length-1].second !== '' || backDataArr[backDataArr.length-1].result !== 0){
 
 
-    //   let getAllPreData = localStorage.getItem("HistoryForBackBtn")
-
-    //   if(!getAllPreData){
-
-    //     localStorage.setItem("HistoryForBackBtn" , JSON.stringify(backDataArr))
-    //   }else{
-    //     getAllPreData = JSON.parse(getAllPreData)
-
-    //     localStorage.setItem("HistoryForBackBtn" , JSON.stringify([...getAllPreData , ...backDataArr]))
-    //   }
-
-    // }
-
-
-    // // // if data getting
-    if (backDataArr.length > 1) {
-      if (backDataArr[backDataArr.length - 1].first !== '' || backDataArr[backDataArr.length - 1].second !== '' || backDataArr[backDataArr.length - 1].result !== 0) {
+    // // // if data getting (if anything changed in calculation)
+    if (backDataArr.length > 0) {
+      if (backDataArr[backDataArr.length - 1].first !== '' && backDataArr[backDataArr.length - 1].second !== '' && backDataArr[backDataArr.length - 1].result !== 0) {
         localStorage.setItem("HistoryForBackBtn", JSON.stringify(backDataArr))
       }
     }
 
 
+
+
   }, [totalOpr, backDataArr])
 
+
+
+  // // // This will run once and only on reload ...
 
   useEffect(() => {
 
@@ -197,6 +258,14 @@ function Prectie2() {
     let getBackBtnData = localStorage.getItem("HistoryForBackBtn")
     // console.log(JSON.parse(getBackBtnData))
     if (getBackBtnData) setBackDataArr(JSON.parse(getBackBtnData))
+
+
+
+    // // // // Make localStorage of history data if not created till now ---->
+    if(!getBackBtnData){
+      localStorage.setItem("HistoryForBackBtn" , JSON.stringify([{ first: "", second: "", sing: "+", result: 0 }]))
+    }
+
 
   }, [])
 
@@ -229,9 +298,8 @@ function Prectie2() {
 
 
             <input
-              p
-              placeholder='Give First Number'
-              className='rounded my-1'
+              placeholder='First Number'
+              className='rounded my-1 text-center w-25'
               type="number" value={valuesOfNum.first}
               name="first"
               onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
@@ -239,28 +307,28 @@ function Prectie2() {
 
 
             <div
-              className='h-100  border rounded rounded-pill px-2 bg-success fw-bold text-white mx-1 my-1'
+              className='h-100  border border-success border-3 rounded-3 rounded  px-2 fw-bold text-success mx-1 my-1'
+              style={{ fontSize: "xx-large", fontFamily: "sans-serif" }}
             >{opratorSing}</div>
 
 
 
 
             <input
-          
-              placeholder='Give Second Number'
-              className='rounded my-1'
+              placeholder='Second Number'
+              className='rounded my-1 text-center w-25'
               type="number" value={valuesOfNum.second}
               name="second"
               onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
             />
 
 
-            <button onClick={claculateHandler} className='ms-1 bg-info fw-bold text-white px-3 rounded my-1'>Calculate</button>
+            <button onClick={claculateHandler} className='ms-1 bg-info fw-bold text-white px-3 rounded my-1'>Equal To</button>
 
             {/* back btn : (last first and scond and also last sing) */}
 
             <button
-              className={(backDataArr.length > 1) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
+              className={(backDataArr.length > 0) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
               onClick={backHandlerFn}
             >Back</button>
 
@@ -278,9 +346,20 @@ function Prectie2() {
           </div>
 
 
-          <div className='d-flex justify-content-around w-50'>
+
+          <div>
+            <button onClick={() => { handeChangeOpr("pw") }} className='ms-1 px-3 rounded my-2 mx-3 bg-primary text-white fw-bolder'>Pw</button>
+            <button onClick={() => { handeChangeOpr("%") }} className='ms-1 px-3 rounded my-2 mx-3 bg-primary text-white fw-bolder'>%</button>
+          </div>
+
+          <div>
+            <button onClick={() => { handeChangeOpr("mod") }} className='ms-1 px-3 rounded my-2 mx-3 bg-primary text-white fw-bolder'>Mod</button>
+          </div>
+
+
+          <div className='d-flex justify-content-around align-items-center w-50'>
             <button
-              className='ms-1 px-3 rounded my-2 mx-3 bg-danger text-white fw-bolder'
+              className='ms-1 px-3 rounded my-2 mx-3 bg-danger text-white fw-bolder h-100'
               onClick={() => {
                 setOpratorSing("+");
                 setValuesOfNum({ first: 0, second: 0 });
@@ -293,10 +372,29 @@ function Prectie2() {
             <p
               className='  border border-2 border-dark ms-1 px-3 rounded my-2 mx-3 bg-success text-white fw-bolder'
             >
-              { 
-                `${valuesOfNum.first || "0"} ${opratorSing || "+"} ${valuesOfNum.second || "0"} = ${result || "0"}`
+              {
+                // // Previously duing this.
               }
+              {
+                // // `${valuesOfNum.first || "0"} ${opratorSing || "+"} ${valuesOfNum.second || "0"} = ${result || "0"}`
+              }
+
+
+
+              {
+                // // // Callecting data from history arr that's why i can get previous data not current one
+
+                backDataArr.length > 0
+                  ? `${backDataArr[backDataArr.length - 1].first} ${backDataArr[backDataArr.length - 1].sing} ${backDataArr[backDataArr.length - 1].second} = ${backDataArr[backDataArr.length - 1].result}`
+                  : "Previous calculation"
+              }
+
             </p>
+
+            <p>
+
+            </p>
+
           </div>
 
         </div>
