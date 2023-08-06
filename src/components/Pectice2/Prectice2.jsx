@@ -216,7 +216,7 @@ function Prectie2() {
 
   useEffect(() => {
 
-    console.log(backDataArr)
+    // console.log(backDataArr)
 
 
     // // // (Total Operations) Save value in localStorage how many operations till now -------->

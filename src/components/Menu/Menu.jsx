@@ -12,7 +12,7 @@ const Menu = ({color}) =>{
 
             {/* I'm nav here */}
 
-            <ul >
+            <ul>
 
                 <li><a style={{color: (color ? "red" : "yellow")}} href="">Home</a></li>
                 <li><a style={{color: (color ? "red" : "yellow")}}  href="">Products</a></li>

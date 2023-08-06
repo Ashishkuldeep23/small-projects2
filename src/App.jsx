@@ -27,22 +27,24 @@ function App() {
       </div>
 
 
-      {/* Calculator ui ------------> */}
 
-      {/* <Calculator /> */}
-
-
-      
       {/* Prectice React and css and also js */}
 
       <Prectice2 />
 
       <Prectice1/>
 
+
+
+      
+      {/* Calculator ui ------------> */}
+
+      <Calculator />
+
       
       {/* Resume UI code here ---------------> */}
 
-      {/* <ResumeMain /> */}
+      <ResumeMain />
 
       <Upload />
 
