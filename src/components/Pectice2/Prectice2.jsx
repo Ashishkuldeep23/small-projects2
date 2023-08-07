@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState  } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import "./prectice2.css"
 
@@ -36,10 +36,9 @@ function Prectie2() {
 
   const [totalOpr, setTotalOpr] = useState(0)
 
-  const firstInput   = useRef(null)     // // // Refrance of 1st input
-  
-  const secondInput   = useRef(null)     // // // Refrance of 2st input
+  const firstInput = useRef(null)     // // // Refrance of 1st input
 
+  const secondInput = useRef(null)     // // // Refrance of 2st input
 
 
 
@@ -121,10 +120,10 @@ function Prectie2() {
 
     // // // validation --------->
 
-    if(!firstVal || !secVal){
+    if (!firstVal || !secVal) {
       return alert("Value can't be 0 or null.")
     }
-    
+
 
 
 
@@ -156,7 +155,7 @@ function Prectie2() {
         cal = firstVal ** secVal
         break;
 
-      case "%`  ":
+      case "%":
         cal = (firstVal / 100) * secVal
         break;
 
@@ -294,7 +293,7 @@ function Prectie2() {
   return (
     <>
 
-      <div className="main_prec_2 bg-warning">
+      <div className="main_prec_2 bg-warning" >
 
         <div
           className='bg-white d-flex align-items-center justify-content-center flex-wrap flex-column text-center  border border-3 border-danger p-sm-5 py-5 rounded rounded-pill'
@@ -310,13 +309,27 @@ function Prectie2() {
 
 
             <input
-              placeholder='First Number'
+              placeholder='1st Number'
               className='rounded my-1 text-center w-25'
               type="number" value={valuesOfNum.first}
               name="first"
-              onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
+              onChange={
+                (event) => {
+                  setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value })
+                }
+              }
+
               ref={firstInput}
-              onKeyDown={ (e)=>{ if(e.key === "Enter") secondInput.current.focus() }  }
+
+            onKeyDown={ 
+              (e)=>{
+                if(e.key === "Enter") return secondInput.current.focus() 
+                else if(e.key === "+") return handeChangeOpr("+");
+                else if(e.key === "-") return handeChangeOpr("−");
+                else if(e.key === "*") return handeChangeOpr("×");
+                else if(e.key === "/") return handeChangeOpr("÷");
+              } 
+            }
 
             />
 
@@ -330,13 +343,19 @@ function Prectie2() {
 
 
             <input
-              placeholder='Second Number'
+              placeholder='2nd Number'
               className='rounded my-1 text-center w-25'
               type="number" value={valuesOfNum.second}
               name="second"
               onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
               ref={secondInput}
-              onKeyDown={ (e)=>{ if(e.key === "Enter")claculateHandler() }  }
+              onKeyDown={(e) => { 
+                if (e.key === "Enter") claculateHandler();
+                else if(e.key === "+") return handeChangeOpr("+");
+                else if(e.key === "-") return handeChangeOpr("−");
+                else if(e.key === "*") return handeChangeOpr("×");
+                else if(e.key === "/") return handeChangeOpr("÷");
+              }}
             />
 
 
