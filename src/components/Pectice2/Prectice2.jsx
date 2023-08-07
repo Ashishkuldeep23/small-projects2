@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState  } from 'react'
 
 import "./prectice2.css"
 
@@ -38,9 +38,9 @@ function Prectie2() {
   const [totalOpr, setTotalOpr] = useState(0)
 
 
-
-
-
+  const firstInput   = useRef(null)     // // // Refrance of 1st input
+  
+  const secondInput   = useRef(null)     // // // Refrance of 2st input
 
 
 
@@ -129,7 +129,7 @@ function Prectie2() {
 
 
 
-    let takeSign = opratorSing
+    // let takeSign = opratorSing   // // // This var stores singValue
 
     let cal;
 
@@ -250,6 +250,15 @@ function Prectie2() {
     // alert("second")
 
 
+    // // // Log input value --->
+    // console.log(firstInput)
+
+    // // // On reload first input should focused
+    firstInput.current.focus()
+
+
+
+
     // // // Get data from localStrorage and set --------->
     let getDataCount = localStorage.getItem("SimCalTotalOpr")
     // console.log(getDataCount)
@@ -287,7 +296,7 @@ function Prectie2() {
   return (
     <>
 
-      <div className="main_prec_2 bg-warning ">
+      <div className="main_prec_2 bg-warning">
 
         <div
           className='bg-white d-flex align-items-center justify-content-center flex-wrap flex-column text-center  border border-3 border-danger p-sm-5 py-5 rounded rounded-pill'
@@ -308,6 +317,9 @@ function Prectie2() {
               type="number" value={valuesOfNum.first}
               name="first"
               onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
+              ref={firstInput}
+              onKeyDown={ (e)=>{ if(e.key === "Enter") secondInput.current.focus() }  }
+
             />
 
 
@@ -325,6 +337,8 @@ function Prectie2() {
               type="number" value={valuesOfNum.second}
               name="second"
               onChange={(event) => { setValuesOfNum({ ...valuesOfNum, [event.target.name]: event.target.value }) }}
+              ref={secondInput}
+              onKeyDown={ (e)=>{ if(e.key === "Enter")claculateHandler() }  }
             />
 
 
