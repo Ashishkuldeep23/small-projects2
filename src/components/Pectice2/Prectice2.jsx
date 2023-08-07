@@ -312,7 +312,7 @@ function Prectie2() {
 
 
             <div
-              className='h-100  border border-success border-3 rounded-3 rounded  px-2 fw-bold text-success mx-1 my-1'
+              className='h-100  border border-success border-3 rounded-3 rounded-pill  px-2 fw-bold text-success mx-1 my-1'
               style={{ fontSize: "xx-large", fontFamily: "sans-serif" }}
             >{opratorSing}</div>
 
@@ -333,7 +333,7 @@ function Prectie2() {
             {/* back btn : (last first and scond and also last sing) */}
 
             <button
-              className={(backDataArr.length > 0) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
+              className={(backDataArr.length > 1) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
               onClick={backHandlerFn}
             >Back(«)</button>
 

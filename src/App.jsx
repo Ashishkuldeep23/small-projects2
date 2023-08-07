@@ -21,10 +21,7 @@ function App() {
 
   return (
     <>
-      <div className='main' style={ { backgroundColor : (theme ? "black" : "white") , height : "100%"} }>
-        <First setcolor={setTheme} color={theme}/>
-        <Menu color={theme} />
-      </div>
+
 
 
 
@@ -33,6 +30,14 @@ function App() {
       <Prectice2 />
 
       <Prectice1/>
+
+
+      {/* A mobile degine nav bar on topn in desktop and below in mobiles  */}
+    
+      <div className='main' style={ { backgroundColor : (theme ? "black" : "white") , height : "100%"} }>
+        <First setcolor={setTheme} color={theme}/>
+        <Menu color={theme} />
+      </div>
 
 
 
