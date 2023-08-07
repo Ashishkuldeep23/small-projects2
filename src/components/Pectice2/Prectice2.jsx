@@ -27,16 +27,14 @@ function Prectie2() {
   // // // This use state will contain all histories --------->
   const [backDataArr, setBackDataArr] = useState([])
 
-
   const [opratorSing, setOpratorSing] = useState(getPreivousData[getPreivousData?.length - 1].sing)
 
   const [valuesOfNum, setValuesOfNum] = useState({ first: getPreivousData[getPreivousData?.length - 1].first, second: getPreivousData[getPreivousData?.length - 1].second })
   // // // Give value as "" (empty string first) and use place holder in input box to show which data user give here or use || opr where using this var value.
 
-  const [result, setResult] = useState(getPreivousData[getPreivousData?.length - 1].result)
+  const [result, setResult] = useState(getPreivousData[getPreivousData?.length - 1].result)       // // // Result getting from history arr.
 
   const [totalOpr, setTotalOpr] = useState(0)
-
 
   const firstInput   = useRef(null)     // // // Refrance of 1st input
   
@@ -123,9 +121,10 @@ function Prectie2() {
 
     // // // validation --------->
 
-    if (firstVal === 0 || secVal === 0) {
-      return alert("Value should change From 0.")
+    if(!firstVal || !secVal){
+      return alert("Value can't be 0 or null.")
     }
+    
 
 
 
@@ -184,7 +183,7 @@ function Prectie2() {
     // console.log(backDataArr)
 
 
-    setValuesOfNum({ first: `${cal}`, second: 0 })    // // // Set value of first input equal to result and second equal to 0
+    setValuesOfNum({ first: `${cal}`, second: "" })    // // // Set value of first input equal to result and second equal to 0
 
 
     // // // count ++ (Increase how many operations)
@@ -206,7 +205,7 @@ function Prectie2() {
 
     setOpratorSing(backDataArr[backDataArr.length - 1]?.sing || "+");
     setResult(backDataArr[backDataArr.length - 1]?.result || "0");
-    setValuesOfNum({ first: backDataArr[backDataArr.length - 1]?.first || "0", second: backDataArr[backDataArr.length - 1]?.second || "0" });
+    setValuesOfNum({ first: backDataArr[backDataArr.length - 1]?.first || "", second: backDataArr[backDataArr.length - 1]?.second || "" });
 
     // backDataArr.pop()    // // // Means pop() and push() also worked with state var array.
     setBackDataArr(backDataArr)
@@ -235,7 +234,6 @@ function Prectie2() {
         localStorage.setItem("HistoryForBackBtn", JSON.stringify(backDataArr))
       }
     }
-
 
 
 
@@ -347,7 +345,7 @@ function Prectie2() {
             {/* back btn : (last first and scond and also last sing) */}
 
             <button
-              className={(backDataArr.length > 1) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
+              className={(backDataArr.length > 0) ? "d-block ms-1 bg-warning fw-bold rounded px-3 my-1" : "d-none"}
               onClick={backHandlerFn}
             >Back(«)</button>
 
@@ -382,7 +380,7 @@ function Prectie2() {
               className='ms-1 px-3 rounded my-2 mx-3 bg-danger text-white fw-bolder h-100'
               onClick={() => {
                 setOpratorSing("+");
-                setValuesOfNum({ first: 0, second: 0 });
+                setValuesOfNum({ first: "", second: "" });
                 setResult(0);
                 setBackDataArr([]);
                 localStorage.removeItem("HistoryForBackBtn");
@@ -404,7 +402,7 @@ function Prectie2() {
               {
                 // // // Callecting data from history arr that's why i can get previous data not current one
 
-                backDataArr.length > 1
+                backDataArr.length > 0
                   ? `${backDataArr[backDataArr.length - 1].first || 0} ${backDataArr[backDataArr.length - 1].sing || "+"} ${backDataArr[backDataArr.length - 1].second || 0} = ${backDataArr[backDataArr.length - 1].result || 0}`
                   : "Previous calculation"
               }
