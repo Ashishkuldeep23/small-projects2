@@ -42,6 +42,10 @@ function Prectie2() {
 
 
 
+
+  // // // fn for Sign btns btn ---------------->
+
+
   function handeChangeOpr(opr) {
 
     // if (opr === "+") {
@@ -106,6 +110,7 @@ function Prectie2() {
   }
 
 
+  // // // fn for Equal to btn ---------------->
 
 
   function claculateHandler() {
@@ -118,10 +123,14 @@ function Prectie2() {
     secVal = parseFloat(secVal)
 
 
+    
+    // console.log(firstVal == (NaN || "" ))   // // Not worked.
+    // console.log(isNaN(firstVal))    // // // isNaN() is inBuild fn that dermines this value is NaN or not ------------>
+    
     // // // validation --------->
 
-    if (!firstVal || !secVal) {
-      return alert("Value can't be 0 or null.")
+    if ( isNaN(firstVal) || isNaN(secVal) ) {
+      return alert("Value can't be Null or empty.")
     }
 
 
@@ -169,7 +178,6 @@ function Prectie2() {
 
 
 
-
     setResult(cal)  // // // Set result here
 
     // setValuesOfNum( (e)=>{
@@ -193,6 +201,9 @@ function Prectie2() {
 
 
 
+
+  // // // fn for back btn ---------------->
+
   function backHandlerFn() {
 
     // console.log(backDataArr)
@@ -213,6 +224,7 @@ function Prectie2() {
 
 
 
+  // // // This Hare dependince and it will run once value get change of stateVariables ...
 
   useEffect(() => {
 
