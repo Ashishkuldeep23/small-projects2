@@ -1,0 +1,130 @@
+
+
+.load_box{
+    height: 100px ;
+    width: 100px ;
+    /* background-color: red; */
+    margin: 1vh;
+}
+
+#loader1{
+
+    border-radius: 50%;
+    border: 5px solid rgb(201, 202, 203);
+
+    border-top: 5px solid red;
+
+    animation: rotate 1s infinite linear ;
+}
+
+#loader2{
+
+    border-radius: 50%;
+    border: 5px solid red;
+    border-top: 0px;
+    animation: rotate 1s infinite linear ;
+}
+
+#loader3{
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid red;
+    animation: rotate 1s infinite linear ;
+}
+
+#loader3_2nd{
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid red;
+    border-left: 5px solid red;
+    border-bottom: 5px solid red;
+    animation: rotate 1s infinite linear ;
+}
+
+#loader4{
+    border-radius: 50%;
+    border-top: 5px solid red;
+    animation: rotate 1s infinite linear ;
+}
+
+#loader5{
+    border-radius: 50%;
+    border-top: 5px solid red;
+    border-left: 5px solid red;
+    animation: rotate 1s infinite linear ;
+}
+
+
+
+
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+
+
+
+.prec3{
+    padding: 5vh;
+   border-radius: 10vh;
+   margin: 2vh 0;
+    border: 2px solid black !important;
+
+   display: flex;
+   flex-wrap: wrap;
+
+   background-color: cyan;
+   gap: 5px;
+}
+
+.prec3  input{
+    flex: 1 0 2rem;
+}
+
+.prec3  button{
+    flex: 1 0 2rem;
+
+    padding: 0.5vh;
+    background-color: greenyellow;
+    font-weight: bold;
+    border-radius: 0.5vh;
+
+    box-shadow: 5px 5px 2px  red;
+    transition: box-shadow 0.5s;
+
+}
+
+.prec3  button:hover{
+    box-shadow: -5px 5px 2px  red;
+}
+
+.prec3  button:focus{
+   transform: scale(.95);
+}
+
+
+.prec3 ~ a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: black;
+    position: relative;
+}
+
+.prec3 ~ a::after{
+    content: "";
+    width: 0%;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    transition:all .5s;
+}
+
+
+.prec3 ~ a:hover::after{
+    width: 105%;
+}

@@ -1,8 +1,10 @@
 .calculator_main{
 
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     border-radius: 10vh;
     width: 99vw;
+    padding: 1vh;
 }
 
 

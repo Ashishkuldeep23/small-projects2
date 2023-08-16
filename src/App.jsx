@@ -12,6 +12,12 @@ import Prectice2 from './components/Pectice2/Prectice2';
 
 import Calculator from './components/Calculator/Calculator';
 
+import AllProjectShow from './components/All_project_Show/AllProjectShow';
+
+import ListItemInterview from "./components/ListItemInterview/ListItemInterview"
+
+import Precice3 from './components/Prectice3/Precice3';
+
 import "./app.css"
 
 
@@ -22,10 +28,20 @@ function App() {
   return (
     <>
 
+      {/* Prectice  */}
 
+      <ListItemInterview />
+
+
+      {/* My new project all project show div -------> */}
+
+      {/* <AllProjectShow /> */}
 
 
       {/* Prectice React and css and also js */}
+
+      <Precice3 />
+
 
       <Prectice2 />
 
