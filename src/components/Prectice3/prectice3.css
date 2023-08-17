@@ -197,9 +197,7 @@
 
 }
 
-#loaderTY4 > .div1{
 
-}
 
 
 
@@ -218,9 +216,11 @@
    gap: 5px;
 }
 
+
 .prec3  input{
     flex: 1 0 2rem;
 }
+
 
 .prec3  button{
     flex: 1 0 2rem;
@@ -249,6 +249,7 @@
     font-size: 2rem;
     color: black;
     position: relative;
+    margin: 2vh;
 }
 
 .prec3 ~ a::after{
@@ -266,3 +267,34 @@
 .prec3 ~ a:hover::after{
     width: 105%;
 }
+
+
+
+
+/* Animation code starts here ---> */
+
+#typingAnimation{
+    text-transform: uppercase;
+    color: red;
+    border-right: 3px solid;
+    overflow: hidden;
+    width: 16ch;
+    padding-left: 5px;
+    animation: typing 4s infinite alternate-reverse steps(16);
+    white-space: nowrap;
+}
+
+
+
+@keyframes typing {
+
+    from{
+        width: 0;
+    }
+    
+}
+
+
+
+
+

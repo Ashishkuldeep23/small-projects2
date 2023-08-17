@@ -46,7 +46,7 @@ const Precice3 = () => {
             <div className='div2'></div>
 
           </div>
-  
+
         </div>
 
         <div className='prec3 border'>
@@ -58,7 +58,12 @@ const Precice3 = () => {
 
         </div>
 
-        <a href="#grow_botto_border" id='grow_botto_border'>Hover</a>
+        <a href="#grow_botto_border" id='grow_botto_border'>Hover on Me</a>
+
+
+        <h2 className='d-flex'>Hey , I'm <span id='typingAnimation'> Ashish Kuldeep</span></h2>
+        <p>Check the code of typing Animation ( width = characters = steps() in animation ) (All are same) </p>
+
 
       </div>
 
