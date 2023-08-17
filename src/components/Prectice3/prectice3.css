@@ -67,6 +67,144 @@
 
 
 
+
+#loaderTY1{
+    border: 5px solid red;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear ;
+}
+
+
+#loaderTY1 > div{
+    height: 80%;
+    width: 80%;
+    border: 5px solid red;
+    border-radius: 50%;
+    border-top: 0;
+    border-right: 0;
+        animation: rotate 1s infinite linear ;
+}
+
+
+
+#loaderTY2{
+    border: 5px solid red;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 50%;
+    animation: rotate 1s infinite linear ;
+}
+
+#loaderTY2>div{
+    height: 80%;
+    width: 80%;
+    border: 5px solid red;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    animation: rotateRev 1s infinite linear ;
+}
+
+
+#loaderTY2>div>div{
+    height: 80%;
+    width: 80%;
+    border: 5px solid red;
+    border-bottom: 0;
+    border-left: 0;
+    border-radius: 50%;
+
+    animation: rotate 1s infinite linear;
+}
+
+
+@keyframes rotateRev {
+    0%{
+        transform: rotate(-360deg);
+    }
+    
+    100%{
+        transform: rotate(0deg);
+    }
+    
+}
+
+
+
+#loaderTY3{
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    border-radius: 50%;
+    animation: glowing .7s infinite linear  alternate-reverse;
+}
+
+@keyframes glowing {
+    0%{
+        transform: scale(.2);
+    }
+    
+    100%{
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+#loaderTY4{
+    height: 50px;
+    width: 50px;
+    background-color: red;
+    border-radius: 50%;
+
+    background-size: 50%;
+
+    position: relative;
+
+    animation:rotate 0.45s infinite ease-in;
+
+}
+
+
+#loaderTY4 > .div1{
+    position: absolute;
+
+    height: 50%;
+    width: 50%;
+    background-color: #fff;
+    top: 0;
+    right: 0;
+
+}
+
+#loaderTY4 > .div2{
+    position: absolute;
+
+    height: 50%;
+    width: 50%;
+    background-color: #fff;
+    bottom: 0;
+    left: 0;
+
+}
+
+#loaderTY4 > .div1{
+
+}
+
+
+
+
+
 .prec3{
     padding: 5vh;
    border-radius: 10vh;

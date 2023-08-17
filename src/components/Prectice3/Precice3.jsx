@@ -6,13 +6,13 @@ import InputPrec3 from './inputPrec3'
 const Precice3 = () => {
 
 
-  const inputPassFocuse =  useRef(null)
+  const inputPassFocuse = useRef(null)
 
 
-  useEffect( ()=>{
+  useEffect(() => {
 
     inputPassFocuse.current.focus()
-  } , [] )
+  }, [])
 
   return (
     <>
@@ -31,16 +31,34 @@ const Precice3 = () => {
 
         </div>
 
+
+        <div className='d-flex flex-wrap align-items-center justify-content-center'>
+          <div className='load_box d-flex justify-content-center align-items-center' id='loaderTY1'><div></div></div>
+
+          <div className='load_box d-flex justify-content-center align-items-center' id='loaderTY2'><div><div></div></div></div>
+
+
+          <div className='d-flex justify-content-center align-items-center' id='loaderTY3'></div>
+
+          <div className='d-flex justify-content-center align-items-center' id='loaderTY4'>
+
+            <div className='div1'></div>
+            <div className='div2'></div>
+
+          </div>
+  
+        </div>
+
         <div className='prec3 border'>
           <input type="text" />
 
-          <InputPrec3  ref={inputPassFocuse} />
-     
+          <InputPrec3 ref={inputPassFocuse} />
+
           <button>Submit</button>
 
         </div>
 
-          <a href="#grow_botto_border" id='grow_botto_border'>Hover</a>
+        <a href="#grow_botto_border" id='grow_botto_border'>Hover</a>
 
       </div>
 
