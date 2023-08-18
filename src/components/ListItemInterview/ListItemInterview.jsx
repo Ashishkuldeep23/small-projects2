@@ -42,22 +42,25 @@ const ListItemInterview = () => {
 
     return (
 
-        <div className="calculator_main d-flex justify-content-center flex-column align-items-center" >
+        <>
 
-            {
-                list.map((el, i) => {
-                    return (
-                        <div key={i} className="d-flex" ref={mainDivRef}>
-                            <input key={i} type="checkBox" onClick={() => { checkedHandler(i); }} />
-                            <h1>{el}</h1>
-                            {(checked === i) && <button onClick={() => { deleteHandler(i); }}> X </button>}
-                        </div>
-                    )
-                })
-            }
+      
 
-        </div>
+                {
+                    list.map((el, i) => {
+                        return (
+                            <div key={i} className="d-flex" ref={mainDivRef}>
+                                <input key={i} type="checkBox" onClick={() => { checkedHandler(i); }} />
+                                <h1>{el}</h1>
+                                {(checked === i) && <button onClick={() => { deleteHandler(i); }}> X </button>}
+                            </div>
+                        )
+                    })
+                }
 
+     
+
+        </>
     )
 
 }

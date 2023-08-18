@@ -6,6 +6,28 @@
 }
 
 
+
+#layout{
+    min-height: 100dvh;
+    width: 98%;
+
+
+    border: 3px solid darkred;
+    border-radius: 10vh;    
+
+    margin: 5vh 1%;
+    padding: 5vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
+
+}
+
+
 @media (max-width:500px) {
 
     .main {

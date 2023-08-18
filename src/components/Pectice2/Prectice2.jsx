@@ -305,7 +305,7 @@ function Prectie2() {
   return (
     <>
 
-      <div className="main_prec_2 bg-warning" >
+      {/* <div className="main_prec_2 bg-warning" > */}
 
         <div
           className='bg-white d-flex align-items-center justify-content-center flex-wrap flex-column text-center  border border-3 border-danger p-sm-5 py-5 rounded rounded-pill'
@@ -449,7 +449,7 @@ function Prectie2() {
         </div>
 
 
-      </div>
+      {/* </div> */}
 
 
 

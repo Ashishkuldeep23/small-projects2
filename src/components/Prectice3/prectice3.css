@@ -54,6 +54,13 @@
     animation: rotate 1s infinite linear ;
 }
 
+#loader6{
+    border-radius: 50%;
+    border: 5px solid transparent;
+    border-top: 5px solid ;
+    animation: rotate_change_border 0.7s infinite linear ;
+}
+
 
 
 
@@ -64,6 +71,46 @@
     
 }
 
+
+@keyframes  rotate_change_border{
+
+    0%{
+        transform: rotate(0deg);
+        border-top-color: cyan;
+    }
+    
+    20%{
+        transform: rotate(72deg);
+        border-top-color: greenyellow;
+        
+    }
+    
+    40%{
+        transform: rotate(144deg);
+        border-top-color: palevioletred;
+        
+    }
+    
+    60%{
+        transform: rotate(216deg);
+        border-top-color: cyan;
+        
+    }
+    
+    80%{
+        transform: rotate(288deg);
+        border-top-color: greenyellow;
+        
+    }
+    
+    100%{
+        transform: rotate(360deg);
+        border-top-color: palevioletred;
+
+    }
+
+
+}
 
 
 
@@ -180,7 +227,7 @@
 
     height: 50%;
     width: 50%;
-    background-color: #fff;
+    background-color: pink;
     top: 0;
     right: 0;
 
@@ -191,7 +238,7 @@
 
     height: 50%;
     width: 50%;
-    background-color: #fff;
+    background-color: pink;
     bottom: 0;
     left: 0;
 
@@ -276,11 +323,11 @@
 #typingAnimation{
     text-transform: uppercase;
     color: red;
+    margin-left: 7px;
     border-right: 3px solid;
     overflow: hidden;
     width: 16ch;
-    padding-left: 5px;
-    animation: typing 4s infinite alternate-reverse steps(16);
+    animation: typing 4.5s infinite alternate-reverse steps(15);
     white-space: nowrap;
 }
 
@@ -298,3 +345,22 @@
 
 
 
+#btn_hover > button{
+    font-size: 2rem;
+    padding:1rem 2rem;
+    outline: 4px red solid;
+    border-radius: 2vh;
+    border: 2px solid red;
+    transition: 100ms;
+}
+
+
+#btn_hover > button:is(:hover ){
+    outline-offset: 4px;
+
+}
+
+#btn_hover > button:is(:focus ){
+    background-color: red;
+    color: white;
+}
