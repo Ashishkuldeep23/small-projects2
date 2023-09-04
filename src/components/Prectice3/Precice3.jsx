@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import "./prectice3.css"
 
-import InputPrec3 from './inputPrec3'
+import InputPrec3 from './InputPrec3'
 
 const Precice3 = () => {
 
@@ -52,6 +52,9 @@ const Precice3 = () => {
       </div>
 
       <div className='prec3 border'>
+        <h5 className='w-100 text-center'>Testing forword ref in this code</h5>
+
+
         <input type="text" />
 
         <InputPrec3 ref={inputPassFocuse} />

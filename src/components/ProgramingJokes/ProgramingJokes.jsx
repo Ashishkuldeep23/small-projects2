@@ -74,7 +74,21 @@ const ProgramingJokes = () => {
                             )
                         })
 
-                        : ""
+                        :
+                        Array.from(Array(5)).map((el, i) => {
+                            return (
+
+                                <div
+                                    className='border border-danger py-3 px-2 d-flex justify-content-center align-items-center rounded '
+                                    key={i}
+                                >
+                                    <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqI3lHFjBbLelg5rGnkZVukHUI2cd9cnEGOQ&usqp=CAU"} alt="joke" />
+                                    {/* <div>{"IMAGE URL :- " + el.image}</div> 
+                        <button onClick={ ()=>{ window.open( el.image , "__blank" ) } }>Open in new Window</button>  */}
+                                </div>
+
+                            )
+                        })
 
                     // JSON.stringify(jokeData)
                 }
@@ -85,7 +99,7 @@ const ProgramingJokes = () => {
                             if (headerOfJokeDiv.current) {
                                 window.scrollTo(0, headerOfJokeDiv.current.offsetTop);
                             }
-                            // setJokeData([]);
+                            setJokeData([]);
                             getJokeByApiCall();
                         }}
                     > <a href="#headerOfJokeDiv">Refresh</a></button>
