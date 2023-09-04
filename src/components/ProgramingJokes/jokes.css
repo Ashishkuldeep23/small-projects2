@@ -5,7 +5,10 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
 }
+
+
 
 
 
@@ -14,9 +17,53 @@
     margin: 5vh;
     /* border-top: 1px solid #ffc107 !important; */
     transition: all 1s;
+    position: relative;
 }
+
+
+
+#joke_holder_div > div > #numbring{
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    border:2px solid black;
+    width: 1.5rem;
+    border-radius: 50%;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 
 #joke_holder_div > div:hover{
     background-color: #ffc107 !important;
+}
+
+
+
+
+@media (max-width:1104px) {
+    #joke_holder_div > div{
+       width: fit-content;
+    }
+
+
+    #joke_holder_div img{
+        padding-top: 10px;
+    }
+
+}
+
+@media (max-width:680px) {
+    #joke_holder_div > div{
+        width: 95%;
+        margin: 2vh 0;
+    }
+
+
+    #joke_holder_div img{
+        width: 100%;
+    }
+
 }

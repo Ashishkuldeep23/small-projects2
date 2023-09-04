@@ -42,6 +42,19 @@ function App() {
         {/* <Layout > <PersonalCard /></Layout> */}
 
 
+        {/* Prectice React and css and also js */}
+        <Layout bg="pink" >
+          <Precice3 />
+        </Layout>
+
+
+        <Layout bg="orange" >
+          <Prectice2 />
+        </Layout>
+
+        {/* Not using prectce 1 now  */}
+
+
         {/* All Section rapped into our Layout component */}
         <Layout bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout>
 
@@ -55,19 +68,6 @@ function App() {
 
         {/* <AllProjectShow /> */}
 
-
-        {/* Prectice React and css and also js */}
-
-        <Layout bg="pink" >
-          <Precice3 />
-        </Layout>
-
-
-        <Layout bg="orange" >
-          <Prectice2 />
-        </Layout>
-
-        {/* Not using prectce 1 now  */}
 
 
         {/* A mobile degine nav bar on topn in desktop and below in mobiles  */}
@@ -90,7 +90,6 @@ function App() {
         {/* Resume UI code here ---------------> */}
 
         <Layout bg='lightyellow'>
-
           <ResumeMain />
         </Layout>
 

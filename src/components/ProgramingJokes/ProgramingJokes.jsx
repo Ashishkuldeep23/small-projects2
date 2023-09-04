@@ -52,7 +52,7 @@ const ProgramingJokes = () => {
 
             <div id='joke_holder_div'>
 
-                <header id='headerOfJokeDiv' ref={headerOfJokeDiv} className='w-100 text-center text-decoration-underline'>
+                <header ref={headerOfJokeDiv} className='w-100 text-center text-decoration-underline'>
                     <h1>See Programming Jokes here</h1>
                 </header>
 
@@ -61,12 +61,13 @@ const ProgramingJokes = () => {
 
                     jokeData && jokeData.length > 0
                         ?
-                        jokeData.map((el) => {
+                        jokeData.map((el , i) => {
                             return (
                                 <div
                                     className='border border-danger py-3 px-2 d-flex justify-content-center align-items-center rounded '
                                     key={el.id}
                                 >
+                                    <span id='numbring'>{i+1}</span>
                                     <img src={el.image} alt="joke" />
                                     {/* <div>{"IMAGE URL :- " + el.image}</div> 
                                 <button onClick={ ()=>{ window.open( el.image , "__blank" ) } }>Open in new Window</button>  */}
@@ -95,14 +96,18 @@ const ProgramingJokes = () => {
 
                 <footer className='w-100 text-center'>
                     <button
+                        className='my-3 btn btn-outline-success fw-bold'
                         onClick={() => {
                             if (headerOfJokeDiv.current) {
                                 window.scrollTo(0, headerOfJokeDiv.current.offsetTop);
                             }
                             setJokeData([]);
                             getJokeByApiCall();
+
+                            // console.log(headerOfJokeDiv.current)
+                            headerOfJokeDiv.current?.scrollIntoView({ behavior: "smooth" })
                         }}
-                    > <a href="#headerOfJokeDiv">Refresh</a></button>
+                    > Refresh</button>
                 </footer>
 
 

@@ -19,7 +19,7 @@ const Precice3 = () => {
       {/* No longer need rapper now  becaouse using layout component*/}
       {/* <div className="calculator_main d-flex justify-content-center flex-column align-items-center border border-3 border-danger my-3"> */}
 
-      <h5 className='px-5 w-75'>Here i created multiple loaders & d-flex flex-warp with flex (on child tag) & effect on Hover of btn & Gworing bottom border on hover & And using  React.forwardRef() function to give refrance in child component see the second input code. </h5>
+      <h5 className='py-2 w-75'>Here i created multiple loaders & d-flex flex-warp with flex (on child tag) & effect on Hover of btn & Gworing bottom border on hover & And using  React.forwardRef() function to give refrance in child component see the second input code. </h5>
 
       <div className='d-flex flex-wrap'>
 

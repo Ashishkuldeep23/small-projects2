@@ -65,4 +65,9 @@
 
         flex-direction: column;
     }
+
+    #layout{
+        padding: 0;
+    }
+
 }
