@@ -1,19 +1,39 @@
-.main {
-    padding: 4vh;
 
-    display: flex;
-    flex-direction: column-reverse;
+
+#app_main {
+    height: 100dvh;
+    width: 100%;
+    border: 1px solid ;
+    background-color: lightcyan;
+    border-radius: 7vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+#app_main::-webkit-scrollbar {
+    width: 5px;
+}
+
+#app_main::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#app_main::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }
 
 
 
-#layout{
+
+#layout {
     min-height: 100dvh;
     width: 98.5%;
 
 
     border: 3px solid darkred;
-    border-radius: 10vh;    
+    border-radius: 10vh;
 
     margin: 5vh 1%;
     padding: 5vh;
@@ -23,9 +43,20 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    
-
 }
+
+
+
+
+
+.main {
+    padding: 4vh;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+
 
 
 @media (max-width:500px) {

@@ -13,13 +13,19 @@
   margin: 0;padding: 0;
 }
 
+*::selection{
+  background-color: black;
+  color: transparent;
+}
+
+
 html , #root{
-  background-color: lightcyan;
+  background-color: black;
 }
 
 
 html::-webkit-scrollbar{
-  width: 5px;
+  width: px;
 }
 
 html::-webkit-scrollbar-track{

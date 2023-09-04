@@ -1,0 +1,22 @@
+
+#joke_holder_div{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+
+#joke_holder_div > div{
+    width: 40vw;    
+    margin: 5vh;
+    /* border-top: 1px solid #ffc107 !important; */
+    transition: all 1s;
+}
+
+
+#joke_holder_div > div:hover{
+    background-color: #ffc107 !important;
+}
