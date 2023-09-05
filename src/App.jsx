@@ -35,32 +35,82 @@ function App() {
 
       <div id='app_main'>
 
+
+        <Layout height='10vh' >
+
+          <nav className="navbar navbar-expand-lg bg-body-tertiary w-100">
+            <div className="container-fluid">
+
+              <div >
+                <a className="navbar-brand" href="#">Mix <span className='d-none d-sm-inline'>Project</span> IInd</a>
+
+              </div>
+
+
+              <div>
+
+
+
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="navbar-toggler-icon"></span>
+                </button>
+
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
+                      <a className="nav-link" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
+                      <a className="nav-link" href="#">Link</a>
+                    </li>
+                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
+                      <a className="nav-link" href="#">About</a>
+                    </li>
+                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
+                      <a className="nav-link" href="#">Home</a>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+          </nav>
+
+
+
+        </Layout>
+
+
         {/* Programing joks here */}
-        <Layout > <ProgramingJokes /></Layout>
+        <Layout layoutFor="Joke Div" > <ProgramingJokes /></Layout>
 
         {/* card prectice only , Not Used now.*/}
         {/* <Layout > <PersonalCard /></Layout> */}
 
 
         {/* Prectice React and css and also js */}
-        <Layout bg="pink" >
+
+
+        <Layout layoutFor="Calculator" bg="orange" >
+          <Prectice2 />
+        </Layout>
+
+        <Layout layoutFor="For Prectice Only" bg="pink" >
           <Precice3 />
         </Layout>
 
 
-        <Layout bg="orange" >
-          <Prectice2 />
-        </Layout>
 
         {/* Not using prectce 1 now  */}
 
 
         {/* All Section rapped into our Layout component */}
-        <Layout bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout>
+        <Layout layoutFor='Just Checking Layout' bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout>
 
 
         {/* Prectice  */}
-        <Layout bg="yellow" > <ListItemInterview /> </Layout>
+        <Layout layoutFor='A ReactJS Question (Incomplete)' bg="yellow" > <ListItemInterview /> </Layout>
 
 
 
@@ -89,11 +139,11 @@ function App() {
 
         {/* Resume UI code here ---------------> */}
 
-        <Layout bg='lightyellow'>
+        <Layout layoutFor='My Resume' bg='lightyellow'>
           <ResumeMain />
         </Layout>
 
-        <Layout bg='yellow'>
+        <Layout layoutFor='Upload Image (Incomplete)' bg='yellow'>
           <Upload />
         </Layout>
 
