@@ -21,7 +21,11 @@ import PersonalCard from "./components/personalCard/PersonalCard"
 
 import ProgramingJokes from './components/ProgramingJokes/ProgramingJokes';
 
+import HeaderNavBar from './components/HeaderNavBar';
+
 import Layout from './Layout';
+
+import { Route, Routes } from 'react-router-dom';
 
 import "./app.css"
 
@@ -36,117 +40,102 @@ function App() {
       <div id='app_main'>
 
 
-        <Layout height='10vh' >
 
-          <nav className="navbar navbar-expand-lg bg-body-tertiary w-100">
-            <div className="container-fluid">
+        {/* Header div this ---------> */}
+        <Layout
+          height='10vh'
+          className='my-0 rounded p-0 position-fixed top-0'
+          bg='lightcyan'
+          zIndex='1000'
+        >
+          <HeaderNavBar />
+        </Layout>
 
-              <div >
-                <a className="navbar-brand" href="#">Mix <span className='d-none d-sm-inline'>Project</span> IInd</a>
 
+
+        <Routes>
+
+          {/* Programing joks here */}
+          <Route path='/' element={<Layout layoutFor="Joke Div" > <ProgramingJokes /></Layout>} />
+
+
+
+          {/* card prectice only , Not Used now.*/}
+          {/* <Layout > <PersonalCard /></Layout> */}
+
+
+          {/* Prectice React and css and also js */}
+
+          <Route path='/calculator' element={<><Layout layoutFor="Calculator" bg="orange" ><Prectice2 /></Layout></>} />
+
+
+          <Route path='/prectice' element={<><Layout layoutFor="For Prectice Only" bg="pink" > <Precice3 /> </Layout></>} />
+
+
+
+
+
+
+
+          {/* Not using prectce 1 now  */}
+
+
+          {/* All Section rapped into our Layout component */}
+          <Route path='/layout' element={<><Layout layoutFor='Just Checking Layout' bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout></>} />
+
+
+
+
+          {/* Prectice  */}
+          <Route path='/ques' element={<Layout layoutFor='A ReactJS Question (Incomplete)' bg="yellow" > <ListItemInterview /> </Layout>} />
+
+
+
+
+          {/* My new project all project show div -------> */}
+
+          {/* <AllProjectShow /> */}
+
+
+
+          {/* A mobile degine nav bar on topn in desktop and below in mobiles  */}
+
+          <Route path='/mobile' element={<>
+            <Layout >
+              <div className='main' style={{ backgroundColor: (theme ? "black" : "white"), height: "100%" }}>
+                <First setcolor={setTheme} color={theme} />
+                <Menu color={theme} />
               </div>
-
-
-              <div>
-
-
-
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
-                      <a className="nav-link" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
-                      <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
-                      <a className="nav-link" href="#">About</a>
-                    </li>
-                    <li className="nav-item mx-2 border border-warning fw-bold rounded ">
-                      <a className="nav-link" href="#">Home</a>
-                    </li>
-                  </ul>
-                </div>
-
-              </div>
-
-            </div>
-          </nav>
-
-
-
-        </Layout>
-
-
-        {/* Programing joks here */}
-        <Layout layoutFor="Joke Div" > <ProgramingJokes /></Layout>
-
-        {/* card prectice only , Not Used now.*/}
-        {/* <Layout > <PersonalCard /></Layout> */}
-
-
-        {/* Prectice React and css and also js */}
-
-
-        <Layout layoutFor="Calculator" bg="orange" >
-          <Prectice2 />
-        </Layout>
-
-        <Layout layoutFor="For Prectice Only" bg="pink" >
-          <Precice3 />
-        </Layout>
-
-
-
-        {/* Not using prectce 1 now  */}
-
-
-        {/* All Section rapped into our Layout component */}
-        <Layout layoutFor='Just Checking Layout' bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout>
-
-
-        {/* Prectice  */}
-        <Layout layoutFor='A ReactJS Question (Incomplete)' bg="yellow" > <ListItemInterview /> </Layout>
-
-
-
-        {/* My new project all project show div -------> */}
-
-        {/* <AllProjectShow /> */}
-
-
-
-        {/* A mobile degine nav bar on topn in desktop and below in mobiles  */}
-
-        <Layout >
-          <div className='main' style={{ backgroundColor: (theme ? "black" : "white"), height: "100%" }}>
-            <First setcolor={setTheme} color={theme} />
-            <Menu color={theme} />
-          </div>
-        </Layout>
+            </Layout></>} />
 
 
 
 
-        {/* Calculator ui ------------> */}
 
-        {/* <Calculator /> */}
+          {/* Calculator ui ------------> */}
+
+          {/* <Calculator /> */}
 
 
-        {/* Resume UI code here ---------------> */}
+          {/* Resume UI code here ---------------> */}
 
-        <Layout layoutFor='My Resume' bg='lightyellow'>
-          <ResumeMain />
-        </Layout>
+          <Route path='/resume' element={<>
+            <Layout layoutFor='My Resume' bg='lightyellow'>
+              <ResumeMain />
+            </Layout>
+          </>} />
 
-        <Layout layoutFor='Upload Image (Incomplete)' bg='yellow'>
-          <Upload />
-        </Layout>
 
+
+          <Route path='/uplaod' element={<>
+            <Layout layoutFor='Upload Image (Incomplete)' bg='yellow'>
+              <Upload />
+            </Layout>
+          </>} />
+
+
+
+        </Routes>
 
       </div>
 
