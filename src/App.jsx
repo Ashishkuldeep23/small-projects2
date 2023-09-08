@@ -21,7 +21,9 @@ import PersonalCard from "./components/personalCard/PersonalCard"
 
 import ProgramingJokes from './components/ProgramingJokes/ProgramingJokes';
 
-import HeaderNavBar from './components/HeaderNavBar';
+import TextToSpeech from './components/TextToSpeech/TextToSpeech';
+
+import HeaderNavBar from './HeaderNavBar';
 
 import Layout from './Layout';
 
@@ -70,6 +72,11 @@ function App() {
 
 
           <Route path='/prectice' element={<><Layout layoutFor="For Prectice Only" bg="pink" > <Precice3 /> </Layout></>} />
+
+
+
+          {/* Text To Speech div */}
+          <Route path='/TtoS' element={<><Layout layoutFor="Text To Speech" > <TextToSpeech /> </Layout></>} />
 
 
 

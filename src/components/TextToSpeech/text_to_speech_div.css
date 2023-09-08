@@ -1,0 +1,15 @@
+#text_to_speech_div{
+    width: 50%;
+    aspect-ratio: 16/8;
+    /* background-color: red; */
+}
+
+
+
+
+
+@media (max-width : 450px) {
+    #text_to_speech_div{
+        width: 90%;
+    }
+}

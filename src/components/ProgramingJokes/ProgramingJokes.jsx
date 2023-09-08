@@ -65,7 +65,7 @@ const ProgramingJokes = () => {
                             return (
                                 <div
                                     className='border border-danger py-3 px-2 d-flex justify-content-center align-items-center rounded '
-                                    key={el.id}
+                                    key={i}
                                 >
                                     <span id='numbring'>{i+1}</span>
                                     <img src={el.image} alt="joke" />
@@ -90,6 +90,8 @@ const ProgramingJokes = () => {
 
                             )
                         })
+
+
 
                     // JSON.stringify(jokeData)
                 }
