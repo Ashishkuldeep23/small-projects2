@@ -9,6 +9,19 @@ const Precice3 = () => {
   const inputPassFocuse = useRef(null)
 
 
+  function copyTextFunction() {
+
+    let copyMeDiv = document.getElementById("copy_me")
+
+    console.log(copyMeDiv)
+    // alert("I will copy")
+
+    copyMeDiv.focus()
+
+  }
+
+
+
   useEffect(() => {
 
     inputPassFocuse.current.focus()
@@ -76,6 +89,14 @@ const Precice3 = () => {
 
         <button>Click</button>
 
+      </div>
+
+
+
+      <div className='mt-4 text-center'>
+        <h4>Copy Text Experiment by palne JS (pending) </h4>
+        <p className='bg-info' id='copy_me'>This text should copy</p>
+        <button onClick={copyTextFunction} className='btn btn-outline-success fw-bold'>I_Will_Copy</button>
       </div>
 
 

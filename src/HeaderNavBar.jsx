@@ -1,48 +1,52 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 
 import { Link } from 'react-router-dom'
 
-const tabArr = ["joke", "calculator", "prectice", "layout", "ques", "mobile", "resume", "TtoS" , "uplaod"]
-
+const tabArr = ["joke" , "raectM" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
 
 
 const HeaderNavBar = () => {
 
-
     const [currentTab, setCurrentTab] = useState(1)
+    
+    let headerRefrance = useRef(null)
+
+
+
+    function handleScrool(ref) {
+
+        // console.log(ref)
+
+        // // // Refrance of div is given in parameter.
+
+        window.scrollTo({
+            top: ref.current.offsetTop,
+            left: 0,
+            behavior: "smooth"
+        })
+    }
 
 
 
     useEffect( ()=>{
 
+        let hashEndPoint = window.location.hash 
+        let actualEndPoint = hashEndPoint.slice( 2 )
+        // console.log(actualEndPoint)
 
-        // // // Below all code is written for tab set also when user refresh the page.
+        let indexOfThatValue = tabArr.indexOf(actualEndPoint)
 
-
-        // console.log(window)
-        // console.log(window.location.hash)
-
-        // let pathName = window.location.pathname
-
-        let hashName = window.location.hash    // // // By this way , i can get hast path of url
-
-        let actualNameOfHash = hashName.slice(2)   // // // TakeOut Actual path from hash path (I'm slicing from 2 becoz i know 0 and first charactors --> that is --> #\)
-        // console.log(hashName.slice(2))
-
-        let indexWherePath = tabArr.indexOf(actualNameOfHash)   // // // Search the path name in our array of pathnames , (if -1 means first path that is joke div , if getting value othenThen -1 , that is index value , set this other index value by adding 1 becoz i use in jsx.)
-
-        // console.log(indexWherePath)
         
-        if(indexWherePath === -1){
-            setCurrentTab(1)
-        }else{
-            setCurrentTab(indexWherePath+1)
-        }
+        if( indexOfThatValue !== -1) setCurrentTab(indexOfThatValue+1)
+        else setCurrentTab(1)  // // Set of one , because 1 is default.
+        
+        // console.log(indexOfThatValue)
 
-    }  , [])
-    
-    
+
+
+    } , [])
+
 
     return (
         <>
@@ -53,7 +57,7 @@ const HeaderNavBar = () => {
             >
                 <div className="container-fluid align-items-start">
 
-                    <div >
+                    <div ref={headerRefrance}>
                         <a
                             id='header_heading'
                             style={{ fontFamily: 'cursive' }}
@@ -75,19 +79,35 @@ const HeaderNavBar = () => {
                                     tabArr.map((ele, i) => {
 
                                         return (
-                                            <li key={i} className={"nav-item mx-2  my-1  text-center px-1 border border-warning fw-bold rounded" + (currentTab === i + 1 ? " bg-primary " : "")} >
+                                            <li key={i} className={"nav-item m-1  text-center px-1 border border-warning fw-bold rounded" + (currentTab === i + 1 ? " bg-primary " : "")} >
                                                 <Link
-                                                    to={`/${ele === "joke" ? "" : ele}`}
+                                                    to={`/${(ele === "joke") ? "" : ele}`}
                                                     className={"nav-link text-capitalize" + (currentTab === i + 1 ? " text-white " : "")}
                                                     aria-current="page"
                                                     href="#"
-                                                    onClick={() => { setCurrentTab(i + 1) }}
+                                                    onClick={() => {
+                                                        setCurrentTab(i + 1);  // // // Set current tab visiability
+
+
+                                                        // handleScrool(headerRefrance)  // // // Calling an predefined fn to scrool the page , but i'm scrolling by only btn then i can write one line for that.
+
+                                                        window.scrollTo( 0 , headerRefrance.current?.offsetTop , "smooth" )
+                                                    }}
 
                                                 >{ele}</Link>
                                             </li>
                                         )
                                     })
                                 }
+
+                                <li
+                                    className=" d-lg-none nav-item mx-2 my-1 text-center px-1 border border-warning border-2 bg-danger  fw-bold rounded "
+
+                                    // // // below two attribute is needed to close menu box , by bootstrap.
+                                    data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                                >
+                                    <a className="nav-link text-capitalize text-white" href="#">Close</a>
+                                </li>
 
 
 

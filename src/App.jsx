@@ -25,6 +25,14 @@ import TextToSpeech from './components/TextToSpeech/TextToSpeech';
 
 import HeaderNavBar from './HeaderNavBar';
 
+import AppointmentAssignment from './components/AppointmentAssignment/AppointmentAssignment';
+
+import ReactMasterAssignments from './components/ReactMasterAssignments/ReactMasterAssignments';
+
+import ResumeBuilder from './components/ResumeBuilder/ResumeBuilder';
+
+import YTmain from './components/YouTube Clone/YTmain';
+
 import Layout from './Layout';
 
 import { Route, Routes } from 'react-router-dom';
@@ -60,6 +68,18 @@ function App() {
           {/* Programing joks here */}
           <Route path='/' element={<Layout layoutFor="Joke Div" > <ProgramingJokes /></Layout>} />
 
+          {/* AppointmentAssignment */}
+          <Route path='/appoint' element={<Layout > <AppointmentAssignment /></Layout>} />
+
+
+          {/* ReactMasterAssignments */}
+          <Route path='/raectM' element={<Layout bg='lightgreen' > <ReactMasterAssignments /></Layout>} />
+
+          {/* ResumeBuilder */}
+          <Route path='/ResumeBuilder' element={<Layout layoutFor='Resume Builder' > <ResumeBuilder /></Layout>} />
+
+          {/* YouTube prectice Div */}
+          <Route path='/YT' element={<Layout layoutFor='Youtube' className='bg-dark text-white' > <YTmain /></Layout>} />
 
 
           {/* card prectice only , Not Used now.*/}
@@ -68,15 +88,15 @@ function App() {
 
           {/* Prectice React and css and also js */}
 
-          <Route path='/calculator' element={<><Layout layoutFor="Calculator" bg="orange" ><Prectice2 /></Layout></>} />
+          <Route path='/calculator' element={<Layout layoutFor="Calculator" bg="orange" ><Prectice2 /></Layout>} />
 
 
-          <Route path='/prectice' element={<><Layout layoutFor="For Prectice Only" bg="pink" > <Precice3 /> </Layout></>} />
+          <Route path='/prectice' element={<Layout layoutFor="For Prectice Only" bg="pink" > <Precice3 /> </Layout>} />
 
 
 
           {/* Text To Speech div */}
-          <Route path='/TtoS' element={<><Layout layoutFor="Text To Speech" > <TextToSpeech /> </Layout></>} />
+          <Route path='/TtoS' element={<Layout layoutFor="Text To Speech" > <TextToSpeech /> </Layout>} />
 
 
 
@@ -109,7 +129,14 @@ function App() {
 
           <Route path='/mobile' element={<>
             <Layout >
-              <div className='main' style={{ backgroundColor: (theme ? "black" : "white"), height: "100%" }}>
+              <div
+                className='main'
+                style={{
+                  backgroundColor: (theme ? "black" : "white"),
+                  height: "100%",
+                  position: "relative"
+                }}
+              >
                 <First setcolor={setTheme} color={theme} />
                 <Menu color={theme} />
               </div>

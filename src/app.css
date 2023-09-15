@@ -38,6 +38,7 @@
     /* min-height: 100dvh; */
     width: 98.5%;
     overflow: hidden;
+    overflow-y: scroll;
 
     border: 3px solid darkred;
     border-radius: 10vh;
@@ -55,6 +56,11 @@
 
     position: relative;
     z-index: 100;
+}
+
+#layout::-webkit-scrollbar-thumb{
+    background-color: transparent;
+
 }
 
 

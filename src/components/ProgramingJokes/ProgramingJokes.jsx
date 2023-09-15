@@ -61,13 +61,13 @@ const ProgramingJokes = () => {
 
                     jokeData && jokeData.length > 0
                         ?
-                        jokeData.map((el , i) => {
+                        jokeData.map((el, i) => {
                             return (
                                 <div
                                     className='border border-danger py-3 px-2 d-flex justify-content-center align-items-center rounded '
                                     key={i}
                                 >
-                                    <span id='numbring'>{i+1}</span>
+                                    <span id='numbring'>{i + 1}</span>
                                     <img src={el.image} alt="joke" />
                                     {/* <div>{"IMAGE URL :- " + el.image}</div> 
                                 <button onClick={ ()=>{ window.open( el.image , "__blank" ) } }>Open in new Window</button>  */}
@@ -100,14 +100,19 @@ const ProgramingJokes = () => {
                     <button
                         className='my-3 btn btn-outline-success fw-bold'
                         onClick={() => {
-                            if (headerOfJokeDiv.current) {
-                                window.scrollTo(0, headerOfJokeDiv.current.offsetTop);
-                            }
+
+
                             setJokeData([]);
                             getJokeByApiCall();
 
                             // console.log(headerOfJokeDiv.current)
-                            headerOfJokeDiv.current?.scrollIntoView({ behavior: "smooth" })
+                            // headerOfJokeDiv.current?.scrollIntoView({ behavior: "smooth" })
+
+
+                            // // // Below line is responsiable for scrool page till Joke header
+                            if (headerOfJokeDiv.current) {
+                                window.scrollTo(0, headerOfJokeDiv.current.offsetTop, "smooth");
+                            }
                         }}
                     > Refresh</button>
                 </footer>
