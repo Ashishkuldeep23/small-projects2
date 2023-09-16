@@ -25,11 +25,11 @@ const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpd
         }
 
         dispatch({
-            type: "Update", payload: {
+            type: "ADD", payload: {
                 id: videoData.length + 1,
                 title: input.title,
                 creator: "YRF",
-                viwes: input.views,
+                views: input.views,
 
             },
         })

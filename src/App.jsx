@@ -73,7 +73,7 @@ function App() {
 
 
           {/* ReactMasterAssignments */}
-          <Route path='/raectM' element={<Layout bg='lightgreen' > <ReactMasterAssignments /></Layout>} />
+          <Route path='/raectM' element={<Layout layoutFor="React Master class Prectice" bg='lightgreen' > <ReactMasterAssignments /></Layout>} />
 
           {/* ResumeBuilder */}
           <Route path='/ResumeBuilder' element={<Layout layoutFor='Resume Builder' > <ResumeBuilder /></Layout>} />

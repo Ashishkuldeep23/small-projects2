@@ -11,7 +11,7 @@ const ReactMasterAssignments = () => {
     return (
         <>
 
-            <div className='w-75 my-3 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
+            <div className=' my-5 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
                 <h3 className='text-center'>Chapter 1 - Introduction to React & Setup</h3>
                 <div className='my-3'>
                     <h5>Q :- Assignment 1 : If we delete node_modules. How to run our app again successfully ?</h5>
@@ -54,7 +54,7 @@ const ReactMasterAssignments = () => {
 
 
 
-            <div className='w-75 my-3 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
+            <div className=' my-5 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
 
                 <h3 className='text-center'>Chapter 2 - Components - JSX and Props</h3>
 
@@ -79,7 +79,7 @@ const ReactMasterAssignments = () => {
 
 
 
-            <div className='w-75 my-3 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
+            <div className=' my-5 px-1 py-2 rounded rounded-2 border border-danger bg-white'>
                 <h3 className='text-center'>Chapter 3 - Conditional Rendering & Lists</h3>
 
                 <dir>
