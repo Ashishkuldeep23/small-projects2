@@ -16,12 +16,15 @@ const VideoHolder = ( {videoData , dispatch , sivlingDataTansfer } ) => {
     return (
         <>
             <div>
-                {
-                    videoData && videoData.map((el , i) => {
+                {  ( videoData && (videoData.length > 0)) 
+
+                    ?videoData.map((el , i) => {
 
                         return <Video key={el.id} sivlingDataTansfer={sivlingDataTansfer} el={el} dispatch={dispatch} />
 
                     })
+
+                    : <h2>Add video by form.☝️</h2>
                 }
 
             </div>

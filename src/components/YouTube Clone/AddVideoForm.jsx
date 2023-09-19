@@ -56,7 +56,7 @@ const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpd
         
 
         setInput({ title: "", views: "" })
-
+        setOnUpdate(false)
     }
 
 
@@ -66,6 +66,7 @@ const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpd
         <>
 
             <form className='border rounded p-1' >
+                <h4 className='text-center'>{onUpdate ? "Update" : "Add"} Video</h4>
 
                 <input onChange={onChangeHandler} value={input.title} name="title" type="text" placeholder='Title' />
                 <input onChange={onChangeHandler} value={input.views} name="views" type="text" placeholder='Views' />
