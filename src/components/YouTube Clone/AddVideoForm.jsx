@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
+import { useVideoData, useVideoDispatch } from './contextReducer'
 
-const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpdate }) => {
+const AddVideoForm = ({  setInput, input, setOnUpdate, onUpdate }) => {
 
     // const [input, setInput] = useState({ title: "", views: "" })
 
 
+    const videoData = useVideoData()
+    const dispatch = useVideoDispatch()
+
+    // // // Fn to take input
     function onChangeHandler(e) {
         // console.log(e);
         e.preventDefault()
@@ -12,7 +17,7 @@ const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpd
         setInput({ ...input, [e.target.name]: e.target.value })
     }
 
-
+    // // // Fn to add new video
     function addVideoHandler(e) {
 
         e.preventDefault()
@@ -38,7 +43,7 @@ const AddVideoForm = ({ videoData, dispatch, setInput, input, setOnUpdate, onUpd
         setOnUpdate(false)
     }
 
-
+    // // // Fn to update video
     function updateVideo(e){
         e.preventDefault()
         e.stopPropagation()

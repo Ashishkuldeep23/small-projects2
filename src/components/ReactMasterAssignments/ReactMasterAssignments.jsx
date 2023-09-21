@@ -4,8 +4,7 @@ import React from 'react'
 
 import { FirstC1A3, SecondC1A3 } from './c1a3'
 
-import C3a1 from './c3a1'
-import { LayoutForC3A1 } from './c3a1'
+import { LayoutForC3A1, C3a1 } from './c3a1'
 
 const ReactMasterAssignments = () => {
     return (
@@ -94,9 +93,15 @@ const ReactMasterAssignments = () => {
                         }
                     </h5>
                     <h6>Ans : </h6>
-                    
-                        <LayoutForC3A1 bg="red"> <C3a1 list={[1,5 ,8 ,9 ,10 ,11]} /> </LayoutForC3A1>
-                    
+
+                    <LayoutForC3A1 bg="red">
+                        <C3a1
+                            list={[1, 5, 8, 9, 10, 11]}
+                            listType={"a"}
+                            ordered={false}
+                        />
+                    </LayoutForC3A1>
+
 
                 </dir>
 

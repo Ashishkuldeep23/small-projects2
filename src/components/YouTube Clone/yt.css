@@ -33,6 +33,7 @@
 #yt_holder>div{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     height: auto;
 }
 

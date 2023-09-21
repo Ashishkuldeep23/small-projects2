@@ -39,6 +39,8 @@ import { Route, Routes } from 'react-router-dom';
 
 import "./app.css"
 
+import { YTCloneCompoent } from './components/YouTube Clone/contextReducer';
+
 
 function App() {
 
@@ -79,7 +81,15 @@ function App() {
           <Route path='/ResumeBuilder' element={<Layout layoutFor='Resume Builder' > <ResumeBuilder /></Layout>} />
 
           {/* YouTube prectice Div */}
-          <Route path='/YT' element={<Layout layoutFor='Youtube' className='bg-dark text-white' > <YTmain /></Layout>} />
+          <Route path='/YT' element={
+            <Layout layoutFor='Youtube' className='bg-dark text-white' >
+
+              <YTCloneCompoent>
+                <YTmain />
+
+              </YTCloneCompoent>
+            </Layout>
+          } />
 
 
           {/* card prectice only , Not Used now.*/}
