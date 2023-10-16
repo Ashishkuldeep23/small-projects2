@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-const tabArr = ["joke" , "raectM" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
+const tabArr = ["joke" , "raectM" , "redux" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
 
 
 const HeaderNavBar = () => {

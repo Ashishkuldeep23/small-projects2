@@ -33,6 +33,9 @@ import ResumeBuilder from './components/ResumeBuilder/ResumeBuilder';
 
 import YTmain from './components/YouTube Clone/YTmain';
 
+
+import ReduxUseInReact from './components/ReduxUse/ReduxUseInReact';
+
 import Layout from './Layout';
 
 import { Route, Routes } from 'react-router-dom';
@@ -96,11 +99,14 @@ function App() {
           {/* <Layout > <PersonalCard /></Layout> */}
 
 
-          {/* Prectice React and css and also js */}
 
           <Route path='/calculator' element={<Layout layoutFor="Calculator" bg="orange" ><Prectice2 /></Layout>} />
 
 
+          <Route path='/redux' element={<Layout layoutFor="Use Redux" bg="lightyellow" ><ReduxUseInReact /></Layout>} />
+
+
+          {/* Prectice React and css and also js */}
           <Route path='/prectice' element={<Layout layoutFor="For Prectice Only" bg="pink" > <Precice3 /> </Layout>} />
 
 

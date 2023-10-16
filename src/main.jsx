@@ -5,11 +5,21 @@ import './index.css'
 
 import { HashRouter } from 'react-router-dom'
 
+import store from './components/store.js'
+
+import { Provider } from 'react-redux'
+
+
+Provider
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>
-    <App />
+
+    <Provider store={store}>
+      <App />
+    </Provider>
+
   </HashRouter>
 )
 
