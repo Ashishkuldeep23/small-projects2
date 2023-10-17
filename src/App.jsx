@@ -1,6 +1,8 @@
 
-
 import { useEffect, useState } from 'react'
+import { Route, Routes } from 'react-router-dom';
+import "./app.css"
+
 import First from './components/First/First'
 import Menu from './components/Menu/Menu'
 
@@ -33,16 +35,32 @@ import ResumeBuilder from './components/ResumeBuilder/ResumeBuilder';
 
 import YTmain from './components/YouTube Clone/YTmain';
 
+import { YTCloneCompoent } from './components/YouTube Clone/contextReducer';
 
 import ReduxUseInReact from './components/ReduxUse/ReduxUseInReact';
 
+import RTK from './components/ReuxToolKit/RTK';
+
 import Layout from './Layout';
 
-import { Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux'
 
-import "./app.css"
+import reduxStore from './components/reduxStore';
 
-import { YTCloneCompoent } from './components/YouTube Clone/contextReducer';
+import { configureStore } from '@reduxjs/toolkit';
+
+import accountreducer from "./components/Slices/amountSlice"
+import bonusReduer from "./components/Slices/bonusSlice"
+
+
+
+
+const storeOfRTKk = configureStore({
+  reducer: {
+    account: accountreducer,
+    bonus : bonusReduer
+  }
+} )
 
 
 function App() {
@@ -89,7 +107,6 @@ function App() {
 
               <YTCloneCompoent>
                 <YTmain />
-
               </YTCloneCompoent>
             </Layout>
           } />
@@ -103,7 +120,25 @@ function App() {
           <Route path='/calculator' element={<Layout layoutFor="Calculator" bg="orange" ><Prectice2 /></Layout>} />
 
 
-          <Route path='/redux' element={<Layout layoutFor="Use Redux" bg="lightyellow" ><ReduxUseInReact /></Layout>} />
+
+
+          {/* Pretice redux and redux-react */}
+          <Route path='/redux' element={
+            <Layout layoutFor="Use Redux" bg="lightyellow" >
+              <Provider store={reduxStore} >
+                <ReduxUseInReact />
+              </Provider>
+            </Layout>} />
+
+          {/* Pretice redux-tool-kit and redux-react */}
+          <Route path='/RTK' element={
+            <Layout layoutFor="Use Redux Tool Kit" bg="lightyellow" >
+              <Provider store={storeOfRTKk}>
+                <RTK />
+              </Provider>
+
+            </Layout>
+          } />
 
 
           {/* Prectice React and css and also js */}

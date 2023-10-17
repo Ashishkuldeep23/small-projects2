@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-const tabArr = ["joke" , "raectM" , "redux" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
+const tabArr = ["joke" , "raectM" , "redux" , "RTK" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
 
 
 const HeaderNavBar = () => {
@@ -79,10 +79,10 @@ const HeaderNavBar = () => {
                                     tabArr.map((ele, i) => {
 
                                         return (
-                                            <li key={i} className={"nav-item m-1  text-center px-1 border border-warning fw-bold rounded" + (currentTab === i + 1 ? " bg-primary " : "")} >
+                                            <li key={i} className={"nav-item m-1  text-center px-1 border border-info fw-bold rounded" + (currentTab === i + 1 ? " bg-primary " : "")} >
                                                 <Link
                                                     to={`/${(ele === "joke") ? "" : ele}`}
-                                                    className={"nav-link text-capitalize" + (currentTab === i + 1 ? " text-white " : "")}
+                                                    className={"nav-link text-capitalize text-info" + (currentTab === i + 1 ? " text-white " : "")}
                                                     aria-current="page"
                                                     href="#"
                                                     onClick={() => {

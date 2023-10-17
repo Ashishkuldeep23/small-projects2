@@ -5,20 +5,20 @@ import './index.css'
 
 import { HashRouter } from 'react-router-dom'
 
-import store from './components/store.js'
+// import store from './components/store.js'
 
-import { Provider } from 'react-redux'
+// import { Provider } from 'react-redux'
 
-
-Provider
+// // // Now i'm using provider in app.js on component level only 
+// // // Because i'm ging to use two store.
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <HashRouter>
 
-    <Provider store={store}>
+    {/* <Provider store={store}> */}
       <App />
-    </Provider>
+    {/* </Provider> */}
 
   </HashRouter>
 )
