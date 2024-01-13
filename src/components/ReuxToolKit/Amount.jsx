@@ -38,7 +38,8 @@ const Amount = () => {
 
                 <div>
                     <input
-                        className='m-1 fw-bold px-1 rounded w-50' type="number"
+                        className='m-1 fw-bold px-1 rounded w-50'
+                        type="number"
                         value={num}
                         onChange={(e) => { setNum(+e.target.value) }}
                     />

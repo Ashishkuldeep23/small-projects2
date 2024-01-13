@@ -1,0 +1,37 @@
+.mot_linesH_hlder {
+
+    background-color: red;
+    width: 90vw;
+    height: 80vh;
+    border-radius: 5vh;
+
+    background: url("https://as1.ftcdn.net/v2/jpg/04/58/99/98/1000_F_458999832_dfvDzmoJvHlZ3S8G2EFepY3ZrswBnqNa.jpg");
+    background-size: contain;
+    background-attachment: fixed;
+    background-position-y: center;
+
+    filter: blur(2px);
+}
+
+
+
+
+
+.moti_text_div {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    font-weight: bold;
+    border: 2px solid #ffffff;
+    border-radius: 2vh;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    backdrop-filter: hue-rotate(80deg);
+}
+
+

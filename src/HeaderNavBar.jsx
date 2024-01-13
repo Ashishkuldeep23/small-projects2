@@ -3,7 +3,11 @@ import React, { useEffect, useRef, useState } from 'react'
 
 import { Link } from 'react-router-dom'
 
-const tabArr = ["joke" , "raectM" , "redux" , "RTK" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
+// // // All paths will visiable here
+// const tabArr = ["joke" , "motivation" , "raectM" , "redux" , "RTK" , "ResumeBuilder" , "YT" , "appoint", "calculator", "prectice", "layout", "ques", "mobile", "resume"]
+
+
+const tabArr = ["joke" , "motivation" , "redux" , "RTK" , "YT" , "calculator" , "prectice" , "layout" , "raectM"  ]
 
 
 const HeaderNavBar = () => {

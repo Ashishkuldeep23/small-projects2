@@ -11,9 +11,7 @@ const bonusSice = createSlice({
     reducers:{
 
         increment(state){
-
             state.point += 1;
-
         }, 
 
 
@@ -24,7 +22,6 @@ const bonusSice = createSlice({
         },
 
     } 
-
 })
 
 

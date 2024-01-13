@@ -9,19 +9,6 @@ const Precice3 = () => {
   const inputPassFocuse = useRef(null)
 
 
-  function copyTextFunction() {
-
-    let copyMeDiv = document.getElementById("copy_me")
-
-    console.log(copyMeDiv)
-    // alert("I will copy")
-
-    copyMeDiv.focus()
-
-  }
-
-
-
   useEffect(() => {
 
     inputPassFocuse.current.focus()
@@ -34,7 +21,7 @@ const Precice3 = () => {
 
       <h5 className='py-2 w-75'>Here i created multiple loaders & d-flex flex-warp with flex (on child tag) & effect on Hover of btn & Gworing bottom border on hover & And using  React.forwardRef() function to give refrance in child component see the second input code. </h5>
 
-      <div className='d-flex flex-wrap'>
+      <div className='d-flex flex-wrap justify-content-center'>
 
         <div className='load_box' id='loader1'></div>
         <div className='load_box' id='loader2'></div>
@@ -90,16 +77,6 @@ const Precice3 = () => {
         <button>Click</button>
 
       </div>
-
-
-
-      <div className='mt-4 text-center'>
-        <h4>Copy Text Experiment by palne JS (pending) </h4>
-        <p className='bg-info' id='copy_me'>This text should copy</p>
-        <button onClick={copyTextFunction} className='btn btn-outline-success fw-bold'>I_Will_Copy</button>
-      </div>
-
-
 
 
       {/* </div> */}

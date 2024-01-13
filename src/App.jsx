@@ -51,6 +51,7 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import accountreducer from "./components/Slices/amountSlice"
 import bonusReduer from "./components/Slices/bonusSlice"
+import { Motivaltion } from './components/MotivationalQuats/Motivaltion';
 
 
 
@@ -58,9 +59,9 @@ import bonusReduer from "./components/Slices/bonusSlice"
 const storeOfRTKk = configureStore({
   reducer: {
     account: accountreducer,
-    bonus : bonusReduer
+    bonus: bonusReduer
   }
-} )
+})
 
 
 function App() {
@@ -90,6 +91,11 @@ function App() {
 
           {/* Programing joks here */}
           <Route path='/' element={<Layout layoutFor="Joke Div" > <ProgramingJokes /></Layout>} />
+
+
+          <Route path='/motivation' element={<Layout layoutFor="Quotes" > <Motivaltion /></Layout>} />
+
+
 
           {/* AppointmentAssignment */}
           <Route path='/appoint' element={<Layout > <AppointmentAssignment /></Layout>} />
@@ -159,7 +165,15 @@ function App() {
 
 
           {/* All Section rapped into our Layout component */}
-          <Route path='/layout' element={<><Layout layoutFor='Just Checking Layout' bg="red" color="white" ><h1>Hello word , Just checking here layout worked or not.</h1></Layout></>} />
+          <Route path='/layout' element={<>
+            <Layout layoutFor='Just Checking Layout' bg="red" color="white"
+            ><h1
+              className=' text-center'
+            >Hello world, Just checking here layout worked or not.
+              </h1>
+              <p className=' text-center' >Layout is just a cover component for every pages that having some set of styling and props data is used to make diffrent each pages (properties like bg-color and border).</p>
+            </Layout>
+          </>} />
 
 
 
